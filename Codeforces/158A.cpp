@@ -1,6 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+/// Solved
+
 int main()
 {
     int x, y;
@@ -13,7 +15,7 @@ int main()
 
     for(int i = 0; i < x; i++) {
         if(a[i] <= 0) continue;
-        else if(a[i] >= a[y]) count++;
+        else if(a[i] >= a[y-1]) count++;
     }
 
     cout<<count<<endl;
