@@ -1,18 +1,24 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+
 int main()
 {
-    string s;
-
-    cin>>s;
-
-    if((count(s.begin(), s.end(), '7') + count(s.begin(), s.end(), '4')) == s.size()) {puts("YES"); return 1;}
-    stringstream convert(s);
-    int n = 0;
-    convert >> n;
-    if(n % 4 == 0 || n % 7 == 0) puts("YES");
-    else cout<<"NO"<<endl;
-
+    int n;
+    cin>>n;
+    bool flag=0;
+    int arr[12] = {4,7,47,74,44,444,447,474,477,777,774,744};
+    for(int i = 0; i < 12; i++)
+    {
+        if(n % arr[i] == 0)
+        {
+            flag=true;
+            break;
+        }
+    }
+    if(flag)
+        cout<<"YES";
+    else
+        cout<<"NO";
     return 0;
 }
