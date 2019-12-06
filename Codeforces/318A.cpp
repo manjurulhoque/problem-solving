@@ -5,23 +5,30 @@ using namespace std;
 
 int main()
 {
-    long long int n, k;
+    long long n,k,part,output;
+
     cin>>n>>k;
 
-    long long int arr[n + 1], j = 1;
-
-    for(long long int i = 1; i <= n; i++) {
-        if(i % 2 != 0) arr[j++] = i;
+    if(n % 2 == 0)
+    {
+        part = n / 2;
+    }
+    else
+    {
+        part =(n/2)+1;
     }
 
-    for(long long int i = 1; i <= n; i++) {
-        if(i % 2 == 0) arr[j++] = i;
+    if(k <= part)
+    {
+        output = (2 * k) - 1;
+    }
+    else
+    {
+        output = (k - part) * 2;
     }
 
-    cout<<arr[k]<<endl;
+    cout<<output<<endl;
 
 
     return 0;
 }
-
-
