@@ -22,14 +22,14 @@ void pop()
     struct Node* temp = top;
     if (top == NULL)
         return;
-    top=top->link;
+    top = top->link;
     free(temp);
 }
 
 void print()
 {
     struct Node* temp = top;
-    while(temp!=NULL)
+    while(temp != NULL)
     {
         printf("%d\n",temp->data);
         temp=temp->link;
@@ -40,7 +40,7 @@ void print()
 
 int isEmpty()
 {
-    if(top==NULL)
+    if(top == NULL)
         return 1;
     else
         return 0;
