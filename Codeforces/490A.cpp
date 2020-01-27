@@ -1,28 +1,42 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+/// Accepted
+
 int main()
 {
-    int n, one = 0, two = 0, three = 0;
+    int n;
     cin>>n;
-    int students[n + 1];
+    bool students[n + 1] = {false};
+    vector<int> computer, math, physics;
 
     for(int i = 1; i <= n; i++)
     {
         int tmp;
         cin>>tmp;
-        students[i] = tmp;
+        // students[i] = tmp;
 
         if(tmp == 1)
-            one++;
+            computer.push_back(i);
         else if(tmp == 2)
-            two++;
+            math.push_back(i);
         else
-            three++;
+            physics.push_back(i);
     }
 
-    while(one >= 1 && two >= 1 && three >= 1) {
+    int minimum = min({computer.size(), math.size(), physics.size()});
 
+    if(minimum == 0)
+    {
+        cout<<0<<endl;
+    }
+    else
+    {
+        cout<<minimum<<endl;
+        for(int i = 0 ; i < minimum; i++)
+        {
+            cout << computer[ i ] << ' ' << physics [ i ] << ' '<<math [ i ] << endl;
+        }
     }
 
     return 0;

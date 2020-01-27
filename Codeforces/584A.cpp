@@ -3,10 +3,12 @@ using namespace std;
 
 int main()
 {
-    double n, m, a;
-    cin>>n>>m>>a;
+    int n, t;
+    cin>>n>>t;
 
-    cout<<(long long) ceil(n / a) * (long long) ceil(m / a)<<endl;
+    int r = floor(10 * ((n - 1) > 1 ? (10 * (n - 1)) : 1) / t*t);
+
+    cout<<r<<endl;
 
     return 0;
 }
