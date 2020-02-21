@@ -8,30 +8,21 @@ int main()
 
     long long arr[n];
 
-    bool present = false;
-    int t, k = 0;
+    int ans = -1, c = 0;
 
-    for(int i = 0; i < n; i++) cin>>arr[i];
-
-    for(int i = 0; i < n; i++)
-    {
-        k = 0;
-        for(int j = 0; j < n; j++)
-        {
-            if(arr[j] % arr[i] == 0) {
-                k++;
-                t = arr[i];
-            }
-        }
-
-        if(k == n)
-        {
-            cout<<t<<endl;
-            return 0;
-        }
+    for(int i = 0; i < n; i++) {
+        cin>>arr[i];
     }
 
-    cout<<-1<<endl;
+    sort(arr, arr + n);
+
+    for(int i = 0; i < n; i++) {
+        if(arr[i] % arr[0] == 0) c++;
+    }
+
+    if(c == n) ans = arr[0];
+
+    cout<<ans<<endl;
 
     return 0;
 }
