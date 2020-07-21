@@ -6,6 +6,7 @@ using namespace std;
 #define pii               pair<int,int>
 #define vi                vector<int>
 #define mp                make_pair
+#define For(i, n)         for (int i = 0; i < n; i++)
 #define ll                long long
 #define ull               unsigned long long
 #define pb                push_back
@@ -21,20 +22,27 @@ int main()
 
     int n, k;
     cin>>n>>k;
+    set<int> s;
+    vector<int> ans;
 
-    int a[n+1], days = -1, sum = 0;
-    a[0] = 0;
     for(int i = 1; i <= n; i++)
     {
-        cin>>a[i];
-        sum += a[i];
-        int c = min(8, sum);
-        k -= c;
-        sum -= c;
-        (k <= 0 && days < 0) ? days = i : 0;
+        int x; cin>>x;
+        if(s.find(x) == s.end())
+        {
+            ans.push_back(x);
+            s.insert(x);
+        }
     }
 
-    cout<<days<<endl;
+    if(ans.size() < k) cout<<"NO"<<endl;
+    else {
+        cout<<"YES"<<endl;
+        for(auto &it: ans) {
+            cout<<<< " ";
+        }
+        cout<<endl;
+    }
 
     return 0;
 }
