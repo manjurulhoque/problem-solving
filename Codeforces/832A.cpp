@@ -20,7 +20,7 @@ int main()
 
     fast_in_out;
 
-    int n, k;
+    long long int n, k;
     cin>>n>>k;
 
     if(n == 1 && k == 1) cout<<"YES"<<endl;

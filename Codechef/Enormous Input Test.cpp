@@ -22,26 +22,16 @@ int main()
 
     int n, k;
     cin>>n>>k;
-    set<int> s;
-    vector<int> ans;
+    int t = 0;
 
     for(int i = 1; i <= n; i++)
     {
         int x;
         cin>>x;
-        if(s.find(x) == s.end())
-        {
-            ans.push_back(i);
-            s.insert(x);
-        }
+        if(x % k == 0) t++;
     }
 
-    if(ans.size() < k) cout<<"NO"<<endl;
-    else {
-        cout<<"YES"<<endl;
-        for (auto i = ans.begin(); i != ans.end(); ++i)
-            cout << *i << " ";
-    }
+    cout<<t<<endl;
 
     return 0;
 }

@@ -20,27 +20,20 @@ int main()
 
     fast_in_out;
 
-    int n, k;
-    cin>>n>>k;
-    set<int> s;
-    vector<int> ans;
+    int x; double y;
 
-    for(int i = 1; i <= n; i++)
-    {
-        int x;
-        cin>>x;
-        if(s.find(x) == s.end())
-        {
-            ans.push_back(i);
-            s.insert(x);
-        }
+    cin>>x>>y;
+
+    cout<<setprecision(2)<<fixed;
+    if(x >= y) {
+        cout<<y<<endl;
     }
-
-    if(ans.size() < k) cout<<"NO"<<endl;
+    else if(x % 5 == 0 && x + 0.5 <= y) {
+        double z = y - (double)x - 0.50;
+        cout<<z<<endl;
+    }
     else {
-        cout<<"YES"<<endl;
-        for (auto i = ans.begin(); i != ans.end(); ++i)
-            cout << *i << " ";
+        cout<<y<<endl;
     }
 
     return 0;
