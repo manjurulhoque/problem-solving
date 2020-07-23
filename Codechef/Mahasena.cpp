@@ -29,6 +29,7 @@ int main()
         else u++;
     }
 
+
     if(l > u) cout<<"READY FOR BATTLE"<<endl;
     else cout<<"NOT READY"<<endl;
 
