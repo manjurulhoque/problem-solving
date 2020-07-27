@@ -8,10 +8,7 @@ int main()
 
     for(long long i = 1; i <= n; i++)
     {
-        for(long long j = 1; j <= n; j++)
-        {
-            if(i * j == x) c++;
-        }
+        if(x % i==0 && (x/i) <= n) c++;
     }
 
     cout<<c<<endl;
