@@ -39,15 +39,19 @@ void pop()
     }
 }
 
+void display()
+{
+    while(!isEmpty()) {
+        pop();
+    }
+}
+
 int main()
 {
-    for(int i = 10; i <= 20; i++) {
+    for(int i = 1; i <= MAXSIZE; i++) {
         push(i);
     }
-    pop();
-    pop();
-    pop();
-    pop();
+
     pop();
     pop();
     pop();
