@@ -15,34 +15,39 @@ using namespace std;
 #define mp                make_pair
 #define fast_in_out       ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0);
 
+bool compareLen(const std::string& a, const std::string& b)
+{
+    return (a.size() < b.size());
+}
+
 int main()
 {
 
     fast_in_out;
 
-    int n, k;
-    cin>>n>>k;
-    vector<int> v;
+    int n;
+    cin >> n;
+    vector<string> s(n);
+    for (int i = 0; i < n; ++i)
+        cin >> s[i];
 
-    for(int i = 1; i <= n; i++)
+    sort(s.begin(), s.end(), [&] (const string &s, const string &t)
     {
-        int y;
-        cin>>y;
-        v.push_back(y);
-    }
+        return s.size() < t.size();
+    });
 
-    map<int, int> ma;
-    For(i, n) ma[v[i]] = i + 1;
-    int f = 0;
-    if (ma.size() >= k) {
-        printf("YES\n");
-        for(auto &x : ma) {
-            cout << x.second << " ";
-            f++;
-            if (f == k) return 0;
+    for (int i = 0; i < n - 1; ++i)
+    {
+        if (s[i + 1].find(s[i]) == string::npos)
+        {
+            cout << "NO\n";
+            return 0;
         }
     }
-    else printf("NO\n");
+
+    cout << "YES\n";
+    for (auto it : s)
+        cout << it << endl;
 
     return 0;
 }

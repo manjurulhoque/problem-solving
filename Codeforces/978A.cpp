@@ -20,29 +20,28 @@ int main()
 
     fast_in_out;
 
-    int n, k;
-    cin>>n>>k;
-    vector<int> v;
-
-    for(int i = 1; i <= n; i++)
+    int t;
+    cin>>t;
+    vi a;
+    vector<int>::iterator it;
+    while(t--)
     {
-        int y;
-        cin>>y;
-        v.push_back(y);
-    }
-
-    map<int, int> ma;
-    For(i, n) ma[v[i]] = i + 1;
-    int f = 0;
-    if (ma.size() >= k) {
-        printf("YES\n");
-        for(auto &x : ma) {
-            cout << x.second << " ";
-            f++;
-            if (f == k) return 0;
+        int m;
+        cin>>m;
+        it = find(a.begin(), a.end(), m);
+        if(it == a.end()) { // doesn't exists
+            a.pb(m);
+        } else {
+            a.erase(remove(a.begin(), a.end(), m), a.end());
+            a.pb(m);
         }
     }
-    else printf("NO\n");
+
+    cout<<a.size()<<endl;
+    for (int i = 0; i < a.size(); i++)
+    {
+        cout<<a[i]<<" ";
+    }
 
     return 0;
 }

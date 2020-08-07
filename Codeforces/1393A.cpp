@@ -20,29 +20,14 @@ int main()
 
     fast_in_out;
 
-    int n, k;
-    cin>>n>>k;
-    vector<int> v;
-
-    for(int i = 1; i <= n; i++)
+    int t;
+    cin>>t;
+    while(t--)
     {
-        int y;
-        cin>>y;
-        v.push_back(y);
+        int n;
+        cin>>n;
+        cout<<n/2+1<<endl;
     }
-
-    map<int, int> ma;
-    For(i, n) ma[v[i]] = i + 1;
-    int f = 0;
-    if (ma.size() >= k) {
-        printf("YES\n");
-        for(auto &x : ma) {
-            cout << x.second << " ";
-            f++;
-            if (f == k) return 0;
-        }
-    }
-    else printf("NO\n");
 
     return 0;
 }
