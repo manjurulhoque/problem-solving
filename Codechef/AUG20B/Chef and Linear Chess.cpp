@@ -24,12 +24,24 @@ int main()
     cin>>t;
     while(t--)
     {
-        int n, k;
-        cin>>n>>k;
-
-        if(n == k) {
-            //for(int i = 1; i <= k; i++) cout<<
+        int N;
+        ull K;
+        cin>>N>>K;
+        ull arr[N],i;
+        long int j = -1;
+        for(i = 0; i < N; i++)
+        {
+            cin>>arr[i];
         }
+        sort(arr,arr + N);
+        for(i = 0; i < N; i++)
+        {
+            if(arr[i] < K && K % arr[i] == 0)
+            {
+                j = arr[i];
+            }
+        }
+        cout<<j<<endl;
     }
 
     return 0;

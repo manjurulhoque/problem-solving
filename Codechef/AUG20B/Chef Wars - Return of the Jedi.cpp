@@ -20,15 +20,25 @@ int main()
 
     fast_in_out;
 
+    //cout<<(1/2)<<endl;
     int t;
     cin>>t;
     while(t--)
     {
-        int n, k;
-        cin>>n>>k;
+        int h, p;
+        cin>>h>>p;
 
-        if(n == k) {
-            //for(int i = 1; i <= k; i++) cout<<
+        while(1) {
+            h -= p;
+            p /= 2;
+            if(h <= 0) {
+                cout<<1<<endl;
+                break;
+            }
+            if(p <= 0) {
+                cout<<0<<endl;
+                break;
+            }
         }
     }
 
