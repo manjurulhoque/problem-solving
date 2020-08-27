@@ -20,17 +20,19 @@ int main()
 
     fast_in_out;
 
-    string a, b, c;
-    cin>>a;
-    cin>>b;
-    cin>>c;
-
-    string d = a + b;
-    sort(d.begin(), d.end());
-    sort(c.begin(), c.end());
-
-    if(c == d) cout<<"YES"<<endl;
-    else cout<<"NO"<<endl;
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n;
+        cin>>n;
+        if(n % 2) {
+            cout<<(n/2)<<endl;
+        }
+        else {
+            cout<<(n/2)-1<<endl;
+        }
+    }
 
     return 0;
 }

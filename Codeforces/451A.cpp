@@ -20,17 +20,16 @@ int main()
 
     fast_in_out;
 
-    string a, b, c;
-    cin>>a;
-    cin>>b;
-    cin>>c;
-
-    string d = a + b;
-    sort(d.begin(), d.end());
-    sort(c.begin(), c.end());
-
-    if(c == d) cout<<"YES"<<endl;
-    else cout<<"NO"<<endl;
+    int n, m;
+	cin >> n >> m;
+	if (n > m) {
+		swap(n, m);
+	}
+	if (n % 2 == 0) {
+		cout << "Malvika" << endl;
+	} else {
+		cout << "Akshat" << endl;
+	}
 
     return 0;
 }

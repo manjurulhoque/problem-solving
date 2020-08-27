@@ -14,7 +14,7 @@ void SieveOfEratosthenes(int n)
     for (int p = 2; p*p <= n; p++)
     {
         // If prime[p] is not changed, then it is a prime
-        if (prime[p] == true)
+        if (prime[p])
         {
             // Update all multiples of p greater than or
             // equal to the square of it
@@ -34,7 +34,7 @@ void SieveOfEratosthenes(int n)
 // Driver Program to test above function
 int main()
 {
-    int n = 50;
+    int n = 5000;
     cout << "Following are the prime numbers smaller "
          << " than or equal to " << n << endl;
     SieveOfEratosthenes(n);

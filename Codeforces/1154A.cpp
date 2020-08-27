@@ -20,17 +20,16 @@ int main()
 
     fast_in_out;
 
-    string a, b, c;
-    cin>>a;
-    cin>>b;
-    cin>>c;
+    int arr[4];
+    For(i, 4) cin>>arr[i];
 
-    string d = a + b;
-    sort(d.begin(), d.end());
-    sort(c.begin(), c.end());
+    sort(arr, arr + 4);
 
-    if(c == d) cout<<"YES"<<endl;
-    else cout<<"NO"<<endl;
+    int c = arr[3] - arr[0];
+    int b = arr[2] - c;
+    int a = arr[3] - (b + c);
+
+    cout<<a<<" "<<b<<" "<<c<<endl;
 
     return 0;
 }

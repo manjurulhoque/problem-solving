@@ -20,17 +20,32 @@ int main()
 
     fast_in_out;
 
-    string a, b, c;
-    cin>>a;
-    cin>>b;
-    cin>>c;
+    int n, mini = 0, mi = 101, ma = 0, maxi = 0;
 
-    string d = a + b;
-    sort(d.begin(), d.end());
-    sort(c.begin(), c.end());
+    cin>>n;
+    int arr[n];
 
-    if(c == d) cout<<"YES"<<endl;
-    else cout<<"NO"<<endl;
+    for(int i = 0; i < n; i++) {
+        cin>>arr[i];
+
+        if(arr[i] > ma) {
+            ma = arr[i];
+            maxi = i;
+        }
+
+        if(arr[i] <= mi) {
+            mi = arr[i];
+            mini = i;
+        }
+    }
+
+    //cout<<maxi<<" "<<mini<<endl;
+
+    if(maxi > mini) mini++;
+
+    cout<<maxi + (n - 1) - mini<<endl;
+
+
 
     return 0;
 }
