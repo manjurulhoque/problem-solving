@@ -3,28 +3,27 @@ using namespace std;
 
 int main()
 {
-    int t;
+    long int t;
 
     cin>>t;
 
     while(t--)
     {
-        int n;
-        cin>>n;
+        long int x, y, n;
+        cin>>x>>y>>n;
 
-        int m = 1;
-        vector<int> ans;
+        long int ans = 0;
 
-        while(n)
+        while(n > 0)
         {
-            int d = n % 10;
-            if( d * m) ans.push_back(d * m);
-            n /= 10;
-            m *= 10;
+            if(n % x == y) {
+                ans = n;
+                break;
+            }
+            n--;
         }
 
-        cout<<ans.size()<<endl;
-        for(auto u : ans) cout<<u<<" "<<endl;
+        cout<<ans<<endl;
     }
 
 
